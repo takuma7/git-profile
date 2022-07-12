@@ -1,5 +1,5 @@
 [package]
-name = "git-profile"
+name = "gitprofile"
 version = "0.1.0"
 edition = "2021"
 description = "A CLI tool to manage git profiles"
@@ -25,3 +25,7 @@ toml = "0.5.9"
 [dev-dependencies]
 assert_cmd = "2.0.4"
 predicates = "2.1.1"
+
+[[bin]]
+name = "git-profile"
+path = "src/main.rs"

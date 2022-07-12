@@ -1,4 +1,4 @@
-use git_profile::run;
+use gitprofile::run;
 
 use anyhow::{Result};
 
