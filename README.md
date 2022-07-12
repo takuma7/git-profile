@@ -57,8 +57,10 @@ $ git config user.email smith@github.com
 ## Installation
 
 ```sh
-cargo install git-profile
+cargo install gitprofile
 ```
+
+(The actual executable will be named `git-profile`.)
 
 
 ## Usage
