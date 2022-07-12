@@ -1,6 +1,6 @@
 [package]
 name = "gitprofile"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "A CLI tool to manage git profiles"
 repository = "https://github.com/takuma7/git-profile/"
