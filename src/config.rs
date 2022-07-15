@@ -10,13 +10,15 @@ use std::path::PathBuf;
 
 pub const DEFAULT_FILE_NAME: &'static str = "gitprofile.toml";
 
+pub type ProfileMap = IndexMap<String, Profile>;
+
 #[serde_as]
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Config {
     #[serde(default = "IndexMap::new")]
     #[serde(skip_serializing_if = "IndexMap::is_empty")]
     #[serde_as(as = "IndexMap<_, _>")]
-    pub profile: IndexMap<String, Profile>,
+    pub profile: ProfileMap
 }
 
 #[derive(Debug, Serialize, Deserialize, Eq, PartialEq)]

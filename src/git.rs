@@ -1,7 +1,6 @@
 use anyhow::{Context, Result};
 
-use crate::config::{Config, Profile};
-use indexmap::{IndexMap};
+use crate::config::{Config, Profile, ProfileMap};
 use std::process::Command;
 
 /// Where to store git-config values
@@ -134,7 +133,7 @@ impl GitConfigRead for GitConfigClient {
 }
 
 pub fn find_profile_key(
-    profile_catalog: &IndexMap<String, Profile>,
+    profile_catalog: &ProfileMap,
     target: &Profile,
 ) -> Option<String> {
     profile_catalog.iter().find_map(|(profile_key, profile)| {

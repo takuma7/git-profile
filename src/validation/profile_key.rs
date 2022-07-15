@@ -1,9 +1,8 @@
 use anyhow::{anyhow, Result};
-use indexmap::IndexMap;
 
-use crate::config::Profile;
+use crate::config::ProfileMap;
 
-pub fn no_duplicates(input: &str, profile_catalog: &IndexMap<String, Profile>) -> Result<()> {
+pub fn no_duplicates(input: &str, profile_catalog: &ProfileMap) -> Result<()> {
     if profile_catalog.contains_key(input) {
         Err(anyhow!("Already in use"))
     } else {
@@ -13,6 +12,8 @@ pub fn no_duplicates(input: &str, profile_catalog: &IndexMap<String, Profile>) -
 
 #[cfg(test)]
 mod tests {
+    use crate::config::Profile;
+
     use super::*;
     use indexmap::indexmap;
 
