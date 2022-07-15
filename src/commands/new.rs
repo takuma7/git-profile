@@ -17,7 +17,7 @@ fn retrieve_profile_key_value(config: &Config) -> Result<(String, Profile)> {
 
     let email: String = Input::with_theme(&ColorfulTheme::default())
         .with_prompt("Enter email (user.email)")
-        .validate_with(is_email)
+        .validate_with(|input: &String| is_email(input))
         .interact_text()?;
 
     let should_set_signingkey = Confirm::with_theme(&ColorfulTheme::default())

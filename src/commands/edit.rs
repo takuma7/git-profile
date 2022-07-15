@@ -44,7 +44,7 @@ fn retrieve_profile(config: &Config, profile_key: &str) -> Result<Profile> {
     let email: String = Input::with_theme(&ColorfulTheme::default())
         .with_prompt("Enter email (user.email)")
         .with_initial_text(&target_profile.email)
-        .validate_with(is_email)
+        .validate_with(|input: &String| is_email(input))
         .interact_text()?;
     
     let maybe_signingkey: Option<String> = if target_profile.signingkey.is_none() {
