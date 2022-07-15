@@ -23,6 +23,7 @@ const USER_EMAIL: &'static str = "user.email";
 const USER_SIGNING_KEY: &'static str = "user.signingkey";
 
 const GET_FLAG: &'static str = "--get";
+const UNSET_FLAG: &'static str = "--unset";
 
 fn get_level_flag(level: &Level) -> String {
     match level {
@@ -77,6 +78,9 @@ impl GitConfigWrite for GitConfigClient {
         git_config(&maybe_level).args([USER_EMAIL, &profile.email]).output()?;
         if let Some(signingkey) = profile.signingkey.as_ref() {
             git_config(&maybe_level).args([USER_SIGNING_KEY, signingkey]).output()?;
+        } else {
+            // Unset user.signingkey in case it was set in the old config
+            git_config(&maybe_level).args([UNSET_FLAG, USER_SIGNING_KEY]).output()?;
         }
 
         Ok(())
