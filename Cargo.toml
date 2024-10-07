@@ -19,7 +19,7 @@ directories = "5.0.1"
 indexmap = { version = "1.9.1", features = ["serde"] }
 lazy_static = "1.4.0"
 regex = "1.9.4"
-serde = { version = "1.0.138", features = ["derive"] }
+serde = { version = "1.0.147", features = ["derive"] }
 serde_with = { version = "1.14.0", features = ["indexmap"] }
 thiserror = "1.0.31"
 toml = "0.5.9"
