@@ -382,7 +382,7 @@ dependencies = [
  "clap",
  "dialoguer",
  "directories",
- "indexmap 1.9.1",
+ "indexmap 2.7.0",
  "lazy_static",
  "predicates",
  "regex",
@@ -447,9 +447,9 @@ checksum = "b9e0384b61958566e926dc50660321d12159025e767c18e043daf26b70104c39"
 
 [[package]]
 name = "indexmap"
-version = "1.9.1"
+version = "1.9.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "10a35a97730320ffe8e2d410b5d3b69279b98d2c14bdb8b70ea89ecf7888d41e"
+checksum = "bd070e393353796e801d209ad339e89596eb4c8d430d18ede6a1cced8fafbd99"
 dependencies = [
  "autocfg",
  "hashbrown 0.12.1",
@@ -788,7 +788,7 @@ dependencies = [
  "base64",
  "chrono",
  "hex",
- "indexmap 1.9.1",
+ "indexmap 1.9.3",
  "indexmap 2.7.0",
  "schemars 0.9.0",
  "schemars 1.0.4",
